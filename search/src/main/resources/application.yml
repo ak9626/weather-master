@@ -1,0 +1,17 @@
+# search/src/main/resources/application.yml
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+      circuitBreaker:
+        requestVolumeThreshold: 10
+        errorThresholdPercentage: 50
+        sleepWindowInMilliseconds: 5000
+
+feign:
+  hystrix:
+    enabled: true
+
