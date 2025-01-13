@@ -7,9 +7,12 @@
         <artifactId>weather</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>details</artifactId>
+    <groupId>com.example</groupId>
+    <artifactId>spring-boot-universities-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>details</name>
+    <name>spring-boot-universities-api</name>
+    <description>spring-boot-universities-api</description>
+
 
     <dependencies>
         <dependency>
@@ -18,22 +21,34 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-client</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-
-
-
         <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
         </dependency>
+
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

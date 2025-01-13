@@ -5,16 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5b1c9fe-c093-4cd3-ad91-b571e276dc04" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/src/main/java/com/example/search/GeneralResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/src/main/java/com/example/search/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-universities-api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-universities-api/src/main/java/com/example/springbootuniversitiesapi/SpringBootUniversitiesApiApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-universities-api/src/main/resources/bootstrap.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weather.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config/src/main/resources/bootstrap.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/details/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/details/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/search/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search/src/main/java/com/example/search/SearchApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/search/src/main/java/com/example/search/SearchApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search/src/main/java/com/example/search/controller/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/search/src/main/java/com/example/search/controller/SearchController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,19 +52,40 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.ConfigApplication.executor": "Run",
-    "git-widget-placeholder": "main",
+    "Spring Boot.DetailsApplication.executor": "Run",
+    "Spring Boot.DiscoveryServerApplication.executor": "Run",
+    "Spring Boot.GatewayApplication.executor": "Run",
+    "Spring Boot.SearchApplication.executor": "Run",
+    "Spring Boot.SpringBootUniversitiesApiApplication.executor": "Run",
+    "git-widget-placeholder": "ProjectUpdates__Anitha",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Anitha/Documents/GitHub/weather-master",
+    "last_opened_file_path": "C:/Users/Anitha/Documents/GitHub/weather-master/spring-boot-universities-api/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anitha\Documents\GitHub\weather-master\spring-boot-universities-api\src\main\resources" />
+      <recent name="C:\Users\Anitha\Documents\GitHub\weather-master" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anitha\Documents\GitHub\weather-master\spring-boot-universities-api\src\main\resources" />
+      <recent name="C:\Users\Anitha\Documents\GitHub\weather-master\spring-boot-universities-api\src\main\java\com\example\springbootuniversitiesapi" />
+      <recent name="C:\Users\Anitha\Documents\GitHub\weather-master\spring-boot-universities-api\src\main" />
+      <recent name="C:\Users\Anitha\Documents\GitHub\weather-master\spring-boot-universities-api" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -94,6 +132,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SpringBootUniversitiesApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="spring-boot-universities-api" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.springbootuniversitiesapi.SpringBootUniversitiesApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -113,7 +158,8 @@
       <updated>1736181993922</updated>
       <workItem from="1736181995004" duration="47000" />
       <workItem from="1736182082179" duration="40000" />
-      <workItem from="1736182135539" duration="1918000" />
+      <workItem from="1736182135539" duration="3704000" />
+      <workItem from="1736747542016" duration="9051000" />
     </task>
     <servers />
   </component>
