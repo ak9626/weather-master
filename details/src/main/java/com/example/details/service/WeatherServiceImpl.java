@@ -1,45 +1,43 @@
 package com.example.details.service;
 
-
-
 import com.example.details.config.EndpointConfig;
-import com.example.details.pojo.City;
+import com.example.details.pojo.WeatherResponse;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
+@Slf4j
 @Service
-public class WeatherServiceImpl implements WeatherService{
-
+public class WeatherServiceImpl implements WeatherService {
     private final RestTemplate restTemplate;
+    private final EndpointConfig endpointConfig;
 
-
-    public WeatherServiceImpl(RestTemplate getRestTemplate) {
-        this.restTemplate = getRestTemplate;
+    @Autowired
+    public WeatherServiceImpl(RestTemplate restTemplate, EndpointConfig endpointConfig) {
+        this.restTemplate = restTemplate;
+        this.endpointConfig = endpointConfig;
     }
 
     @Override
     @Retryable(include = IllegalAccessError.class)
-    public List<Integer> findCityIdByName(String city) {
-        City[] cities = restTemplate.getForObject(EndpointConfig.queryWeatherByCity + city, City[].class);
-        List<Integer> ans = new ArrayList<>();
-        for(City c: cities) {
-            if(c != null && c.getWoeid() != null) {
-                ans.add(c.getWoeid());
-            }
-        }
-        return ans;
-    }
+    public WeatherResponse findCityIdByName(String city) {
+        try {
+            WeatherResponse response = restTemplate.getForObject(
+                    endpointConfig.getWeatherUrl(city),
+                    WeatherResponse.class
+            );
 
-    @Override
-    //change findcitynamebyid => find weather details by id
-    public Map<String, Map> findCityNameById(int id) {
-        Map<String, Map> ans = restTemplate.getForObject(EndpointConfig.queryWeatherById + id, HashMap.class);
-        return ans;
+            if (response == null) {
+                log.warn("No weather data found for city: {}", city);
+            }
+
+            return response;
+        } catch (Exception e) {
+            log.error("Error fetching weather data for city: " + city, e);
+            return null;
+        }
     }
 }

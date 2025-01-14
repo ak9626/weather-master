@@ -1,45 +1,41 @@
 package com.example.details.controller;
 
+import com.example.details.pojo.WeatherResponse;
 import com.example.details.service.WeatherService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Map;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 @RefreshScope
 @RestController
+@RequestMapping("/details")
+@RequiredArgsConstructor
+@Slf4j
 public class WeatherController {
-
     private final WeatherService weatherService;
 
     @Value("${server.port}")
     private int randomServerPort;
 
-    @Autowired
-    public WeatherController(WeatherService weatherService) {
-        this.weatherService = weatherService;
+    @GetMapping
+    public WeatherResponse queryWeatherByCity(@RequestParam String city) {
+        log.info("Received query for city: {}", city);
+
+        WeatherResponse weatherData = weatherService.findCityIdByName(city);
+        if (weatherData == null) {
+            log.warn("No weather data found for city: {}", city);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "City weather data not found");
+        }
+        return weatherData;
     }
 
-    @GetMapping("/details")
-    public ResponseEntity<?> queryWeatherByCity(@RequestParam(required = true) String city) {
-        return new ResponseEntity<>(weatherService.findCityIdByName(city), HttpStatus.OK);
+    @GetMapping("/port")
+    public String queryServicePort() {
+        return "weather service + " + randomServerPort;
     }
 
-
-//    @GetMapping("/details/{id}")
-//    public ResponseEntity<?> queryWeatherByCity(@PathVariable int id) {
-//        return new ResponseEntity<Map>(weatherService.findCityNameById(id), HttpStatus.OK);
-//    }
-
-    @GetMapping("/details/port")
-    public ResponseEntity<?> queryWeatherByCity() {
-        return new ResponseEntity<>("weather service + " + randomServerPort, HttpStatus.OK);
-    }
 }
